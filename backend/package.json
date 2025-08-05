@@ -1,0 +1,25 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "@types/minimatch": "latest",
+    "hardhat": "^2.26.1"
+  },
+  "resolutions": {
+    "minimatch": "5.1.6"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ethers": "^5.8.0",
+    "express": "^5.1.0"
+  }
+}

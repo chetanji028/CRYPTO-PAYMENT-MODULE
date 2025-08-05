@@ -1,7 +1,8 @@
+import PaymentPage from "../pages/PaymentPage";
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 import { Home } from "../pages/Home/Home";
 import { Cart } from "../pages/Cart/Cart";
-import { Route, Routes } from "react-router-dom";
 import { Login } from "../pages/auth/Login/Login";
 import { ProductListing } from "../pages/ProductListing/ProductListing";
 import { ProductDetails } from "../pages/ProductDetails/ProductDetails";
@@ -36,7 +37,6 @@ export const NavRoutes = () => {
           </RequiresAuth>
         }
       />
-      <Route path="*" element={<PageNotFound />} />
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<Logout />} />
       <Route path="/product-listing" element={<ProductListing />} />
@@ -49,19 +49,30 @@ export const NavRoutes = () => {
             <Checkout />
           </RequiresAuth>
         }
-      />
-      <Route path="/profile" element={<UserProfile />}>
-        <Route
-          path="/profile/"
-          element={
-            <RequiresAuth>
-              <Profile />
-            </RequiresAuth>
-          }
-        />
-        <Route path="/profile/orders" element={<Orders />} />
-        <Route path="/profile/addresses" element={<Addresses />} />
+      /> 
+
+      <Route
+  path="/payment"
+  element={
+    <RequiresAuth>
+      <PaymentPage />
+    </RequiresAuth>
+  }
+/>
+      <Route
+        path="/profile"
+        element={
+          <RequiresAuth>
+            <UserProfile />
+          </RequiresAuth>
+        }
+      >
+        <Route index element={<Profile />} />
+        <Route path="orders" element={<Orders />} />
+        <Route path="addresses" element={<Addresses />} />
       </Route>
+
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
 };

@@ -13,8 +13,11 @@ function App() {
     <div className="App">
       <Header />
       {loading && <Loader />}
-      <NavRoutes />
       <ScrollToTop />
+
+      {/* All routes handled here */}
+      <NavRoutes />
+
       <Toaster
         position="top-right"
         reverseOrder={false}
