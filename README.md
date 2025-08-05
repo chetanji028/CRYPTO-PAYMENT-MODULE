@@ -1,53 +1,119 @@
-# About this project
+# 🚀 Crypto Payment Module
 
-This project is developed for the display and sale of digital goods. You will be able to revolutionize the purpose of your project in just a few dozen minutes of creation, and show us the new and transformed look of your project.
+A full-stack dApp that allows minting, transferring, and checking balances of ERC-20 tokens using a React frontend, Node.js backend, and Hardhat smart contract deployment.
 
-## Tech Stack
+---
 
-- Frontend: React.js, HTML, CSS
-- Backend: MockBee
-- Payment Integration: Razorpay
-- Deployment: Netlify
-- Other Libraries and Tools: React Router, Axios, JWT, etc.
+## 🧾 Features
 
-## Features
+- Mint tokens to an Ethereum address
+- Transfer tokens to another address
+- Check token balance of any address
+- Local blockchain setup using Hardhat
 
-- Authentication
-  - Login
-  - Logout
-  - Signup
-- Product Listing
-- Filter Products by
-  - Category
-  - Discount
-  - Price
-  - Rating
-- Cart Management
-- Wishlist Management
-- Search by
-  - Product Name
-  - Category
-- Address Management
-- Single Product Page
-- Loading & Alerts
-- User Profile Page
-- Checkout
-- Order Summary
-- Order History
-- Apply Coupons
-- Payment Integration
-- Responsive
+---
 
-## Run Locally
+#
+---
 
-Install dependencies
+## ⚙️ Prerequisites
+
+- Node.js ≥ 16.x
+- Hardhat
+- MetaMask browser extension (for frontend interaction)
+- Yarn or npm
+
+---
+
+## 🛠️ Installation
+
+### 1. Clone the Repository
 
 ```bash
-  npm install
-```
+git clone https://github.com/chetanji028/crypto-payment-module.git
+cd crypto-payment-module
 
-Start the server
+2. Install Dependencies
 
-```bash
-  npm run start
-```
+# Root
+npm install
+
+# Backend
+cd backend && npm install
+
+# Frontend
+cd ../frontend && npm install
+
+Running the Project
+Step 1: Start Local Hardhat Blockchain
+npx hardhat node 
+
+"This will start a local blockchain and print 20 funded accounts."
+
+Step 2: Deploy the Token Smart Contract
+In a new terminal, run:
+
+npx hardhat run scripts/deploy.js --network localhost
+"Copy the deployed contract address and update it in frontend and backend if required." 
+
+Step 3: Start Backend Server
+In a new terminal: 
+
+cd backend
+node server.js 
+
+Step 4: Start Frontend React App
+In a new terminal: 
+
+cd frontend
+npm start 
+"The frontend will launch at http://localhost:3000 "
+
+🔁 Testing Steps
+Connect MetaMask
+
+Switch to the local Hardhat network http://127.0.0.1:8545.
+
+Import an account from the Hardhat accounts list using its private key.
+
+Mint Tokens
+
+Enter the address and token amount.
+
+Click Mint.
+
+Check Balance
+
+Enter the address and click Check Balance.
+
+Transfer Tokens
+
+Enter recipient address and amount.
+
+Click Transfer.
+
+Check Balances Again
+
+Ensure the transfer has occurred.
+
+
+Default Test Addresses (from Hardhat)
+Sender:
+0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+
+Receiver:
+0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+
+Private Keys:
+Can be copied from the terminal when npx hardhat node is run.
+
+Tools Used
+Hardhat
+
+React.js
+
+Node.js + Express
+
+Ethers.js
+
+MetaMask 
